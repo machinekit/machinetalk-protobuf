@@ -2,13 +2,33 @@
 
 from distutils.core import setup
 
-#! /usr/bin/env python
-#
 # See README for usage instructions.
 import glob
 import os
 import subprocess
 import sys
+
+PROJECT = 'machinetalk'
+PROJECT_NAME = 'machinetalk-protobuf'
+PROJECT_URL = 'https://github.com/machinekit/machinetalk-protobuf'
+FILES = [
+    'canon.proto',
+    'config.proto',
+    'emcclass.proto',
+    'log.proto',
+    'message.proto',
+    'motcmds.proto',
+    'nanopb.proto',
+    'object.proto',
+    'preview.proto',
+    'rtapi_message.proto',
+    'rtapicommand.proto',
+    'status.proto',
+    'task.proto',
+    'test.proto',
+    'types.proto',
+    'value.proto'
+    ]
 
 # We must use setuptools, not distutils, because we need to use the
 # namespace_packages option for the "google" package.
@@ -97,33 +117,20 @@ class clean(_clean):
 
 class build_py(_build_py):
   def run(self):
+    source_path = '../src/%s/protobuf/' % PROJECT
     # Generate necessary .proto file if it doesn't exist.
-    generate_proto("../src/machinetalk/protobuf/canon.proto")
-    generate_proto("../src/machinetalk/protobuf/config.proto")
-    generate_proto("../src/machinetalk/protobuf/emcclass.proto")
-    generate_proto("../src/machinetalk/protobuf/log.proto")
-    generate_proto("../src/machinetalk/protobuf/message.proto")
-    generate_proto("../src/machinetalk/protobuf/motcmds.proto")
-    generate_proto("../src/machinetalk/protobuf/nanopb.proto")
-    generate_proto("../src/machinetalk/protobuf/object.proto")
-    generate_proto("../src/machinetalk/protobuf/preview.proto")
-    generate_proto("../src/machinetalk/protobuf/rtapi_message.proto")
-    generate_proto("../src/machinetalk/protobuf/rtapicommand.proto")
-    generate_proto("../src/machinetalk/protobuf/status.proto")
-    generate_proto("../src/machinetalk/protobuf/task.proto")
-    generate_proto("../src/machinetalk/protobuf/test.proto")
-    generate_proto("../src/machinetalk/protobuf/types.proto")
-    generate_proto("../src/machinetalk/protobuf/value.proto")
+    for file in FILES:
+      generate_proto(source_path + file)
 
     # _build_py is an old-style class, so super() doesn't work.
     _build_py.run(self)
 
 if __name__ == '__main__':
-      setup(name="machinetalk_protobuf",
+      setup(name=PROJECT_NAME,
             version="1.0",
-            description="Protobuf Python modules for Machinetalk",
-            url="https://github.com/machinekit/machinetalk-protobuf",
-            namespace_packages=['machinetalk'],
+            description="Protobuf Python modules for %s" % PROJECT,
+            url=PROJECT_URL,
+            namespace_packages=[PROJECT],
             packages=find_packages(),
             install_requires=['setuptools'],
             cmdclass={
