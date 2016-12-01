@@ -3,32 +3,13 @@
 from distutils.core import setup
 
 # See README for usage instructions.
-import glob
 import os
 import subprocess
 import sys
 
 PROJECT = 'machinetalk'
-PROJECT_NAME = 'machinetalk-protobuf'
 PROJECT_URL = 'https://github.com/machinekit/machinetalk-protobuf'
-FILES = [
-    'canon.proto',
-    'config.proto',
-    'emcclass.proto',
-    'log.proto',
-    'message.proto',
-    'motcmds.proto',
-    'nanopb.proto',
-    'object.proto',
-    'preview.proto',
-    'rtapi_message.proto',
-    'rtapicommand.proto',
-    'status.proto',
-    'task.proto',
-    'test.proto',
-    'types.proto',
-    'value.proto'
-    ]
+PROJECT_NAME = '%s-protobuf' % PROJECT
 
 # We must use setuptools, not distutils, because we need to use the
 # namespace_packages option for the "google" package.
@@ -119,8 +100,10 @@ class build_py(_build_py):
   def run(self):
     source_path = '../src/%s/protobuf/' % PROJECT
     # Generate necessary .proto file if it doesn't exist.
-    for file in FILES:
-      generate_proto(source_path + file)
+    for entry in os.listdir(source_path):
+      filepath = os.path.join(source_path, entry)
+      if os.path.isfile(filepath) and filepath.endswith('.proto'):
+          generate_proto(filepath)
 
     # _build_py is an old-style class, so super() doesn't work.
     _build_py.run(self)
