@@ -6,6 +6,7 @@ from distutils.core import setup
 import os
 import subprocess
 import sys
+import shutil
 
 PROJECT = 'machinetalk'
 PROJECT_URL = 'https://github.com/machinekit/machinetalk-protobuf'
@@ -84,8 +85,21 @@ def generate_proto(source, require = True):
     if subprocess.call(protoc_command) != 0:
       sys.exit(-1)
 
+def create_init(path):
+  if not os.path.exists(path):
+    os.mkdir(path)
+
+  initfile = os.path.join(path, '__init__.py')
+  if not os.path.exists(initfile):
+    content = "__import__('pkg_resources').declare_namespace(__name__)\n"
+    with open(initfile, 'w') as f:
+      f.write(content)
+
 class clean(_clean):
   def run(self):
+    # delete _init_ files
+    shutil.rmtree(PROJECT)
+
     # Delete generated files in the code tree.
     for (dirpath, dirnames, filenames) in os.walk("."):
       for filename in filenames:
@@ -99,6 +113,7 @@ class clean(_clean):
 class build_py(_build_py):
   def run(self):
     source_path = '../src/%s/protobuf/' % PROJECT
+
     # Generate necessary .proto file if it doesn't exist.
     for entry in os.listdir(source_path):
       filepath = os.path.join(source_path, entry)
@@ -109,6 +124,10 @@ class build_py(_build_py):
     _build_py.run(self)
 
 if __name__ == '__main__':
+      # create __init__ files
+      create_init(PROJECT)
+      create_init(PROJECT + '/protobuf')
+      # start the setup
       setup(name=PROJECT_NAME,
             version="1.0",
             description="Protobuf Python modules for %s" % PROJECT,
