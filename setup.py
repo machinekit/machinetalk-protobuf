@@ -11,7 +11,7 @@ import shutil
 PROJECT = 'machinetalk'
 PROJECT_NAME = '%s-protobuf' % PROJECT
 DESCRIPTION = "Protobuf Python modules for %s" % PROJECT
-VERSION = "v1.0.5"
+VERSION = "v1.0.6"
 AUTHOR = "Alexander Roessler"
 AUTHOR_EMAIL = "alex@machinekoder.com"
 PROJECT_URL = 'https://github.com/machinekit/%s' % PROJECT_NAME
@@ -142,7 +142,7 @@ if __name__ == '__main__':
             author_email=AUTHOR_EMAIL,
             namespace_packages=[PROJECT],
             packages=find_packages(),
-            install_requires=['setuptools'],
+            install_requires=['setuptools', 'protobuf'],
             cmdclass={
                 'clean': clean,
                 'build_py': build_py,
