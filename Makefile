@@ -40,6 +40,9 @@ CXXGEN   := $(BUILDDIR)/cpp
 # generated Python files
 PYGEN    := $(BUILDDIR)/python
 
+# generated Java files
+JAVAGEN  := $(BUILDDIR)/java
+
 # generated Documentation files
 # default to asciidoc template
 # for mk-docs formatting, pass in TEMPLATE pointing to the mk-docs template
@@ -81,6 +84,10 @@ PROTO_CXX_INCS := ${PROTO_SPECS:$(SRCDIR)/%.proto=$(CXXGEN)/%.pb.h}
 # generated C++ sources
 PROTO_CXX_SRCS  :=  ${PROTO_SPECS:$(SRCDIR)/%.proto=$(CXXGEN)/%.pb.cc}
 
+# generated Java sources
+uppercase_file = $(shell echo "$(1)" | sed 's/\(.*\/\)\(.*\)/\1\u\2/')
+PROTO_JAVA_TARGETS := $(foreach JAVA,${PROTO_SPECS:$(SRCDIR)/%.proto=$(JAVAGEN)/%.java},$(call uppercase_file,$(JAVA)))
+
 # generated doc file
 DOC_TARGET := $(DOCGEN)/$(PROJECT)-protobuf.$(DOCEXT)
 
@@ -107,7 +114,8 @@ GENERATED += \
 	$(PROTO_CXX_SRCS)\
 	$(PROTO_CXX_INCS) \
 	$(PROTO_PY_TARGETS) \
-	$(PROTO_PY_EXTRAS)
+	$(PROTO_PY_EXTRAS) \
+	$(PROTO_JAVA_TARGETS)
 
 $(OBJDIR)/%.d: $(SRCDIR)/%.proto
 	$(ECHO) "protoc create dependencies for $<"
@@ -150,6 +158,21 @@ $(PYGEN)/%_pb2.py: $(SRCDIR)/%.proto
 $(PYGEN)/%.py: python/%.py
 	cp "$<" "$@"
 
+# ------------- Java rules ------------
+#
+# generate Java packages from proto files
+define java_from_proto
+$(call uppercase_file,$(1:$(SRCDIR)/%.proto=$(JAVAGEN)/%.java)): $1
+	$(ECHO) "protoc create $$@ from $$<"
+	@mkdir -p $(JAVAGEN)
+	$(Q)$(PROTOC) $(PROTOC_FLAGS) \
+		--proto_path=$(SRCDIR)/ \
+		--proto_path=$(GPBINCLUDE)/ \
+		--java_out=$(JAVAGEN)/ \
+		$$<
+endef
+$(foreach PROTO,$(PROTO_SPECS),$(eval $(call java_from_proto,$(PROTO))))
+
 # force create of %.proto-dependent files and their deps
 Makefile: $(GENERATED) $(PROTO_DEPS)
 -include $(PROTO_DEPS)
@@ -177,6 +200,7 @@ ios_replace:
 
 docs: $(PROTO_DEPS) $(DOC_TARGET)
 
+.PHONY: clean
 clean:
 	rm -rf build
 
