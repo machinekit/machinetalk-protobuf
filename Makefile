@@ -76,7 +76,7 @@ vpath %.proto  $(PROTODIR):$(GPBINCLUDE):$(DESCDIR)/compiler
 
 # $(PROJECT)/proto/*.proto derived Python bindings
 PROTO_PY_TARGETS := ${PROTO_SPECS:$(SRCDIR)/%.proto=$(PYGEN)/%_pb2.py}
-PROTO_PY_EXTRAS := $(PYGEN)/setup.py $(PYGEN)/$(PROJECT)/__init__.py $(PYGEN)/$(PROJECT)/protobuf/__init__.py
+PROTO_PY_EXTRAS := $(PYGEN)/$(PROJECT)/__init__.py $(PYGEN)/$(PROJECT)/protobuf/__init__.py
 
 # generated C++ includes
 PROTO_CXX_INCS := ${PROTO_SPECS:$(SRCDIR)/%.proto=$(CXXGEN)/%.pb.h}
@@ -117,6 +117,34 @@ GENERATED += \
 	$(PROTO_PY_EXTRAS) \
 	$(PROTO_JAVA_TARGETS)
 
+all: $(PROTO_DEPS) $(GENERATED)
+
+# include dependecy files
+-include $(PROTO_DEPS)
+
+ios_replace:
+	sh scripts/ios-replace.sh $(CXXGEN)
+
+docs: $(DOC_TARGET)
+
+.PHONY: clean
+clean:
+	rm -rf build
+
+install_proto: $(PROTO_SPECS)
+	mkdir -p $(DESTDIR)/include/$(NAMESPACEDIR)
+	for proto in $(PROTO_SPECS); do \
+		install -m 0644 $$proto $(DESTDIR)/include/$(NAMESPACEDIR); \
+	done
+
+install_cpp: $(PROTO_CXX_INCS)
+	mkdir -p $(DESTDIR)/include/$(NAMESPACEDIR)
+	for headerfile in $(PROTO_CXX_INCS); do \
+		install -m 0644 $$headerfile $(DESTDIR)/include/$(NAMESPACEDIR); \
+	done
+
+install: install_proto install_cpp
+
 $(OBJDIR)/%.d: $(SRCDIR)/%.proto
 	$(ECHO) "protoc create dependencies for $<"
 	@mkdir -p $(OBJDIR)/
@@ -155,8 +183,9 @@ $(PYGEN)/%_pb2.py: $(SRCDIR)/%.proto
 		--python_out=$(PYGEN)/ \
 		$<
 
-$(PYGEN)/%.py: python/%.py
-	cp "$<" "$@"
+$(PYGEN)/%/__init__.py:
+	$(ECHO) "creating __init__ file $@"
+	@touch "$@"
 
 # ------------- Java rules ------------
 #
@@ -173,9 +202,6 @@ $(call uppercase_file,$(1:$(SRCDIR)/%.proto=$(JAVAGEN)/%.java)): $1
 endef
 $(foreach PROTO,$(PROTO_SPECS),$(eval $(call java_from_proto,$(PROTO))))
 
-# force create of %.proto-dependent files and their deps
-Makefile: $(GENERATED) $(PROTO_DEPS)
--include $(PROTO_DEPS)
 
 # ------------- protoc-gen-doc rules ------------
 #
@@ -192,28 +218,3 @@ $(DOC_TARGET): $(wildcard $(SRCDIR)/*.proto)
 	--proto_path=$(GPBINCLUDE)/ \
 	--doc_out=$(DOCTEMPLATE),$(SRCDIRINV)/$@:./ \
 	$(NAMESPACEDIR)/*.proto
-
-all: $(GENERATED) $(PROTO_DEPS)
-
-ios_replace:
-	sh scripts/ios-replace.sh $(CXXGEN)
-
-docs: $(PROTO_DEPS) $(DOC_TARGET)
-
-.PHONY: clean
-clean:
-	rm -rf build
-
-install_proto: $(PROTO_SPECS)
-	mkdir -p $(DESTDIR)/include/$(NAMESPACEDIR)
-	for proto in $(PROTO_SPECS); do \
-		install -m 0644 $$proto $(DESTDIR)/include/$(NAMESPACEDIR); \
-	done
-
-install_cpp: $(PROTO_CXX_INCS)
-	mkdir -p $(DESTDIR)/include/$(NAMESPACEDIR)
-	for headerfile in $(PROTO_CXX_INCS); do \
-		install -m 0644 $$headerfile $(DESTDIR)/include/$(NAMESPACEDIR); \
-	done
-
-install: install_proto install_cpp
