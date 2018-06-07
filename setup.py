@@ -13,7 +13,7 @@ from codecs import open
 PROJECT = 'machinetalk'
 PROJECT_NAME = '%s-protobuf' % PROJECT
 DESCRIPTION = "Protobuf Python modules for %s" % PROJECT
-VERSION = "1.0.8"
+VERSION = "1.1.0"
 AUTHOR = "Alexander Roessler"
 AUTHOR_EMAIL = "alex@machinekoder.com"
 PROJECT_URL = 'https://github.com/machinekit/%s' % PROJECT_NAME

@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='machinetalk/protobuf/status.proto',
   package='machinetalk',
   syntax='proto2',
-  serialized_pb=_b('\n!machinetalk/protobuf/status.proto\x12\x0bmachinetalk\x1a!machinetalk/protobuf/nanopb.proto\x1a machinetalk/protobuf/types.proto\x1a\"machinetalk/protobuf/preview.proto\x1a#machinetalk/protobuf/emcclass.proto\x1a\"machinetalk/protobuf/motcmds.proto\"\xc6\x01\n\x0b\x45mcToolData\x12\r\n\x05index\x18\x01 \x02(\x05\x12\n\n\x02id\x18\x02 \x01(\x05\x12\x10\n\x08\x64iameter\x18\x0c \x01(\x01\x12\x12\n\nfrontangle\x18\r \x01(\x01\x12\x11\n\tbackangle\x18\x0e \x01(\x01\x12\x13\n\x0borientation\x18\x0f \x01(\x05\x12%\n\x06offset\x18\x10 \x01(\x0b\x32\x15.machinetalk.Position\x12\x0f\n\x07\x63omment\x18\x11 \x01(\t\x12\x0e\n\x06pocket\x18\x12 \x01(\x05:\x06\x92?\x03H\xcc\x08\"\xd5\x02\n\x13\x45mcStatusMotionAxis\x12\r\n\x05index\x18\x01 \x02(\x05\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\x12\r\n\x05\x66\x61ult\x18\x03 \x01(\x08\x12\x16\n\x0e\x66\x65rror_current\x18\x04 \x01(\x01\x12\x17\n\x0f\x66\x65rror_highmark\x18\x05 \x01(\x01\x12\r\n\x05homed\x18\x06 \x01(\x08\x12\x0e\n\x06homing\x18\x07 \x01(\x08\x12\r\n\x05inpos\x18\x08 \x01(\x08\x12\r\n\x05input\x18\t \x01(\x01\x12\x16\n\x0emax_hard_limit\x18\n \x01(\x08\x12\x16\n\x0emax_soft_limit\x18\x0b \x01(\x08\x12\x16\n\x0emin_hard_limit\x18\x0c \x01(\x08\x12\x16\n\x0emin_soft_limit\x18\r \x01(\x08\x12\x0e\n\x06output\x18\x0e \x01(\x01\x12\x17\n\x0foverride_limits\x18\x0f \x01(\x08\x12\x10\n\x08velocity\x18\x10 \x01(\x01:\x06\x92?\x03H\xcd\x08\"\xa6\x02\n\x13\x45mcStatusConfigAxis\x12\r\n\x05index\x18\x01 \x02(\x05\x12+\n\taxis_type\x18\x02 \x01(\x0e\x32\x18.machinetalk.EmcAxisType\x12\x10\n\x08\x62\x61\x63klash\x18\x03 \x01(\x01\x12\x12\n\nmax_ferror\x18\x04 \x01(\x01\x12\x1a\n\x12max_position_limit\x18\x05 \x01(\x01\x12\x12\n\nmin_ferror\x18\x06 \x01(\x01\x12\x1a\n\x12min_position_limit\x18\x07 \x01(\x01\x12\x15\n\rhome_sequence\x18\t \x01(\x05\x12\x18\n\x10max_acceleration\x18\n \x01(\x01\x12\x14\n\x0cmax_velocity\x18\x0b \x01(\x01\x12\x12\n\nincrements\x18\x0c \x01(\t:\x06\x92?\x03H\xce\x08\"?\n\x13\x45mcProgramExtension\x12\r\n\x05index\x18\x01 \x02(\x05\x12\x11\n\textension\x18\x02 \x01(\t:\x06\x92?\x03H\xcf\x08\"9\n\x11\x45mcStatusAnalogIO\x12\r\n\x05index\x18\x01 \x02(\x05\x12\r\n\x05value\x18\x02 \x01(\x01:\x06\x92?\x03H\xd0\x08\":\n\x12\x45mcStatusDigitalIO\x12\r\n\x05index\x18\x01 \x02(\x05\x12\r\n\x05value\x18\x02 \x01(\x08:\x06\x92?\x03H\xd1\x08\"6\n\x0e\x45mcStatusLimit\x12\r\n\x05index\x18\x01 \x02(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x06\x92?\x03H\xd2\x08\"6\n\x0e\x45mcStatusGCode\x12\r\n\x05index\x18\x01 \x02(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x06\x92?\x03H\xd3\x08\"6\n\x0e\x45mcStatusMCode\x12\r\n\x05index\x18\x01 \x02(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x06\x92?\x03H\xd4\x08\"8\n\x10\x45mcStatusSetting\x12\r\n\x05index\x18\x01 \x02(\x05\x12\r\n\x05value\x18\x02 \x01(\x01:\x06\x92?\x03H\xd5\x08\"\xba\t\n\x0f\x45mcStatusConfig\x12\x1c\n\x14\x64\x65\x66\x61ult_acceleration\x18\x01 \x01(\x01\x12\x0c\n\x04\x61xes\x18\x03 \x01(\x05\x12.\n\x04\x61xis\x18\x04 \x03(\x0b\x32 .machinetalk.EmcStatusConfigAxis\x12\x11\n\taxis_mask\x18\x05 \x01(\x05\x12\x12\n\ncycle_time\x18\x06 \x01(\x01\x12\r\n\x05\x64\x65\x62ug\x18\x07 \x01(\x05\x12\x37\n\x0fkinematics_type\x18\x08 \x01(\x0e\x32\x1e.machinetalk.EmcKinematicsType\x12\x18\n\x10max_acceleration\x18\n \x01(\x01\x12\x14\n\x0cmax_velocity\x18\x0b \x01(\x01\x12\x35\n\x0clinear_units\x18\x0c \x01(\x0e\x32\x1f.machinetalk.EmcLinearUnitsType\x12\x18\n\x10\x64\x65\x66\x61ult_velocity\x18\r \x01(\x01\x12;\n\x11program_extension\x18\x0e \x03(\x0b\x32 .machinetalk.EmcProgramExtension\x12;\n\x0fposition_offset\x18\x0f \x01(\x0e\x32\".machinetalk.EmcPositionOffsetType\x12?\n\x11position_feedback\x18\x10 \x01(\x0e\x32$.machinetalk.EmcPositionFeedbackType\x12\x19\n\x11max_feed_override\x18\x11 \x01(\x01\x12\x19\n\x11min_feed_override\x18\x12 \x01(\x01\x12\x1c\n\x14max_spindle_override\x18\x13 \x01(\x01\x12\x1c\n\x14min_spindle_override\x18\x14 \x01(\x01\x12\x1d\n\x15\x64\x65\x66\x61ult_spindle_speed\x18\x15 \x01(\x01\x12\x1f\n\x17\x64\x65\x66\x61ult_linear_velocity\x18\x16 \x01(\x01\x12\x14\n\x0cmin_velocity\x18\x17 \x01(\x01\x12\x1b\n\x13max_linear_velocity\x18\x18 \x01(\x01\x12\x1b\n\x13min_linear_velocity\x18\x19 \x01(\x01\x12 \n\x18\x64\x65\x66\x61ult_angular_velocity\x18\x1a \x01(\x01\x12\x1c\n\x14max_angular_velocity\x18\x1b \x01(\x01\x12\x1c\n\x14min_angular_velocity\x18\x1c \x01(\x01\x12\x12\n\nincrements\x18\x1d \x01(\t\x12\r\n\x05grids\x18\x1e \x01(\t\x12\r\n\x05lathe\x18\x1f \x01(\x08\x12\x10\n\x08geometry\x18  \x01(\t\x12\x13\n\x0b\x61rcdivision\x18! \x01(\r\x12\x17\n\x0fno_force_homing\x18\" \x01(\x08\x12\x13\n\x0bremote_path\x18# \x01(\t\x12\x31\n\ntime_units\x18$ \x01(\x0e\x32\x1d.machinetalk.EmcTimeUnitsType\x12\x0c\n\x04name\x18% \x01(\t\x12\x37\n\x0cuser_command\x18& \x03(\x0b\x32!.machinetalk.EmcStatusUserCommand\x12\x37\n\rangular_units\x18\' \x01(\x0e\x32 .machinetalk.EmcAngularUnitsType:\x06\x92?\x03H\xd6\x08\"\xfb\x0b\n\x0f\x45mcStatusMotion\x12\x14\n\x0c\x61\x63tive_queue\x18\x01 \x01(\x05\x12.\n\x0f\x61\x63tual_position\x18\x02 \x01(\x0b\x32\x15.machinetalk.Position\x12\x1d\n\x15\x61\x64\x61ptive_feed_enabled\x18\x03 \x01(\x08\x12+\n\x03\x61in\x18\x04 \x03(\x0b\x32\x1e.machinetalk.EmcStatusAnalogIO\x12,\n\x04\x61out\x18\x05 \x03(\x0b\x32\x1e.machinetalk.EmcStatusAnalogIO\x12.\n\x04\x61xis\x18\x06 \x03(\x0b\x32 .machinetalk.EmcStatusMotionAxis\x12\x14\n\x0c\x62lock_delete\x18\x07 \x01(\x08\x12\x14\n\x0c\x63urrent_line\x18\x08 \x01(\x05\x12\x13\n\x0b\x63urrent_vel\x18\t \x01(\x01\x12\x12\n\ndelay_left\x18\n \x01(\x01\x12,\n\x03\x64in\x18\x0b \x03(\x0b\x32\x1f.machinetalk.EmcStatusDigitalIO\x12\x16\n\x0e\x64istance_to_go\x18\x0c \x01(\x01\x12-\n\x04\x64out\x18\r \x03(\x0b\x32\x1f.machinetalk.EmcStatusDigitalIO\x12\"\n\x03\x64tg\x18\x0e \x01(\x0b\x32\x15.machinetalk.Position\x12\x0f\n\x07\x65nabled\x18\x0f \x01(\x08\x12\x19\n\x11\x66\x65\x65\x64_hold_enabled\x18\x10 \x01(\x08\x12\x1d\n\x15\x66\x65\x65\x64_override_enabled\x18\x11 \x01(\x08\x12\x10\n\x08\x66\x65\x65\x64rate\x18\x12 \x01(\x01\x12+\n\tg5x_index\x18\x13 \x01(\x0e\x32\x18.machinetalk.OriginIndex\x12)\n\ng5x_offset\x18\x14 \x01(\x0b\x32\x15.machinetalk.Position\x12)\n\ng92_offset\x18\x15 \x01(\x0b\x32\x15.machinetalk.Position\x12\n\n\x02id\x18\x17 \x01(\x05\x12\r\n\x05inpos\x18\x18 \x01(\x08\x12\x34\n\x15joint_actual_position\x18\x19 \x01(\x0b\x32\x15.machinetalk.Position\x12-\n\x0ejoint_position\x18\x1a \x01(\x0b\x32\x15.machinetalk.Position\x12*\n\x05limit\x18\x1b \x03(\x0b\x32\x1b.machinetalk.EmcStatusLimit\x12\x13\n\x0bmotion_line\x18\x1c \x01(\x05\x12,\n\x0bmotion_type\x18\x1d \x01(\x0e\x32\x17.machinetalk.MotionType\x12\x37\n\x0bmotion_mode\x18\x1e \x01(\x0e\x32\".machinetalk.EmcTrajectoryModeType\x12\x0e\n\x06paused\x18\x1f \x01(\x08\x12\'\n\x08position\x18  \x01(\x0b\x32\x15.machinetalk.Position\x12\x15\n\rprobe_tripped\x18! \x01(\x08\x12\x11\n\tprobe_val\x18\" \x01(\x05\x12.\n\x0fprobed_position\x18# \x01(\x0b\x32\x15.machinetalk.Position\x12\x0f\n\x07probing\x18$ \x01(\x08\x12\r\n\x05queue\x18% \x01(\x05\x12\x12\n\nqueue_full\x18& \x01(\x08\x12\x13\n\x0brotation_xy\x18\' \x01(\x01\x12\x15\n\rspindle_brake\x18( \x01(\x08\x12\x19\n\x11spindle_direction\x18) \x01(\x05\x12\x17\n\x0fspindle_enabled\x18* \x01(\x08\x12\x1a\n\x12spindle_increasing\x18+ \x01(\x05\x12 \n\x18spindle_override_enabled\x18, \x01(\x08\x12\x15\n\rspindle_speed\x18- \x01(\x01\x12\x13\n\x0bspindlerate\x18. \x01(\x01\x12&\n\x05state\x18/ \x01(\x0e\x32\x17.machinetalk.RCS_STATUS\x12\x14\n\x0cmax_velocity\x18\x30 \x01(\x01\x12\x18\n\x10max_acceleration\x18\x31 \x01(\x01\x12\x11\n\trapidrate\x18\x32 \x01(\x01:\x06\x92?\x03H\xd7\x08\"\xee\x01\n\x0b\x45mcStatusIo\x12\r\n\x05\x65stop\x18\x01 \x01(\x08\x12\r\n\x05\x66lood\x18\x02 \x01(\x08\x12\x0c\n\x04lube\x18\x03 \x01(\x08\x12\x12\n\nlube_level\x18\x04 \x01(\x08\x12\x0c\n\x04mist\x18\x05 \x01(\x08\x12*\n\x0btool_offset\x18\x08 \x01(\x0b\x32\x15.machinetalk.Position\x12,\n\ntool_table\x18\t \x03(\x0b\x32\x18.machinetalk.EmcToolData\x12\x16\n\x0epocket_prepped\x18\n \x01(\x05\x12\x17\n\x0ftool_in_spindle\x18\x0b \x01(\x05:\x06\x92?\x03H\xd8\x08\"\xc7\x02\n\rEmcStatusTask\x12\x1a\n\x12\x65\x63ho_serial_number\x18\x01 \x01(\x05\x12\x35\n\nexec_state\x18\x02 \x01(\x0e\x32!.machinetalk.EmcTaskExecStateType\x12\x0c\n\x04\x66ile\x18\x03 \x01(\t\x12\x15\n\rinput_timeout\x18\x04 \x01(\x08\x12\x15\n\roptional_stop\x18\x05 \x01(\x08\x12\x11\n\tread_line\x18\x06 \x01(\x05\x12/\n\ttask_mode\x18\x07 \x01(\x0e\x32\x1c.machinetalk.EmcTaskModeType\x12\x13\n\x0btask_paused\x18\x08 \x01(\x05\x12\x31\n\ntask_state\x18\t \x01(\x0e\x32\x1d.machinetalk.EmcTaskStateType\x12\x13\n\x0btotal_lines\x18\n \x01(\x05:\x06\x92?\x03H\xd9\x08\"\xe4\x02\n\x0f\x45mcStatusInterp\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t\x12+\n\x06gcodes\x18\x02 \x03(\x0b\x32\x1b.machinetalk.EmcStatusGCode\x12\x35\n\x0cinterp_state\x18\x03 \x01(\x0e\x32\x1f.machinetalk.EmcInterpStateType\x12?\n\x13interpreter_errcode\x18\x04 \x01(\x0e\x32\".machinetalk.EmcInterpExitCodeType\x12+\n\x06mcodes\x18\x05 \x03(\x0b\x32\x1b.machinetalk.EmcStatusMCode\x12/\n\x08settings\x18\x06 \x03(\x0b\x32\x1d.machinetalk.EmcStatusSetting\x12\x35\n\rprogram_units\x18\x07 \x01(\x0e\x32\x1e.machinetalk.EmcCanonUnitsType:\x06\x92?\x03H\xda\x08\"\xe2\x03\n\x14\x45mcCommandParameters\x12\r\n\x05index\x18\x01 \x01(\r\x12\x13\n\x0b\x64\x65\x62ug_level\x18\x02 \x01(\r\x12\x13\n\x0bline_number\x18\x03 \x01(\x05\x12\r\n\x05scale\x18\x04 \x01(\x01\x12\x10\n\x08velocity\x18\x05 \x01(\x01\x12\x10\n\x08\x64istance\x18\x06 \x01(\x01\x12\r\n\x05value\x18\x07 \x01(\x01\x12\x0e\n\x06\x65nable\x18\x08 \x01(\x08\x12\x0f\n\x07\x63ommand\x18\t \x01(\t\x12\x0c\n\x04path\x18\n \x01(\t\x12/\n\ttask_mode\x18\x64 \x01(\x0e\x32\x1c.machinetalk.EmcTaskModeType\x12\x31\n\ntask_state\x18\x65 \x01(\x0e\x32\x1d.machinetalk.EmcTaskStateType\x12\x35\n\ttraj_mode\x18\x66 \x01(\x0e\x32\".machinetalk.EmcTrajectoryModeType\x12\"\n\x04pose\x18g \x01(\x0b\x32\x14.machinetalk.EmcPose\x12+\n\ttool_data\x18h \x01(\x0b\x32\x18.machinetalk.EmcToolData\x12,\n\ntool_table\x18i \x03(\x0b\x32\x18.machinetalk.EmcToolData:\x06\x92?\x03H\xdb\x08\">\n\x14\x45mcStatusUserCommand\x12\r\n\x05index\x18\x01 \x02(\x05\x12\x0f\n\x07\x63ommand\x18\x02 \x01(\t:\x06\x92?\x03H\xdc\x08*\xe7\x02\n\x14\x45mcTaskExecStateType\x12\x17\n\x13\x45MC_TASK_EXEC_ERROR\x10\x01\x12\x16\n\x12\x45MC_TASK_EXEC_DONE\x10\x02\x12$\n EMC_TASK_EXEC_WAITING_FOR_MOTION\x10\x03\x12*\n&EMC_TASK_EXEC_WAITING_FOR_MOTION_QUEUE\x10\x04\x12 \n\x1c\x45MC_TASK_EXEC_WAITING_FOR_IO\x10\x05\x12+\n\'EMC_TASK_EXEC_WAITING_FOR_MOTION_AND_IO\x10\x07\x12#\n\x1f\x45MC_TASK_EXEC_WAITING_FOR_DELAY\x10\x08\x12(\n$EMC_TASK_EXEC_WAITING_FOR_SYSTEM_CMD\x10\t\x12.\n*EMC_TASK_EXEC_WAITING_FOR_SPINDLE_ORIENTED\x10\n*\x84\x01\n\x12\x45mcInterpStateType\x12\x18\n\x14\x45MC_TASK_INTERP_IDLE\x10\x01\x12\x1b\n\x17\x45MC_TASK_INTERP_READING\x10\x02\x12\x1a\n\x16\x45MC_TASK_INTERP_PAUSED\x10\x03\x12\x1b\n\x17\x45MC_TASK_INTERP_WAITING\x10\x04*\xc8\x01\n\x15\x45mcInterpExitCodeType\x12\x16\n\x12\x45MC_INTERP_EXIT_OK\x10\x00\x12\x18\n\x14\x45MC_INTERP_EXIT_EXIT\x10\x01\x12\"\n\x1e\x45MC_INTERP_EXIT_EXECUTE_FINISH\x10\x02\x12\x1b\n\x17\x45MC_INTERP_EXIT_ENDFILE\x10\x03\x12!\n\x1d\x45MC_INTERP_EXIT_FILE_NOT_OPEN\x10\x04\x12\x19\n\x15\x45MC_INTERP_EXIT_ERROR\x10\x05*{\n\x11\x45mcKinematicsType\x12\x17\n\x13KINEMATICS_IDENTITY\x10\x01\x12\x1b\n\x17KINEMATICS_FORWARD_ONLY\x10\x02\x12\x1b\n\x17KINEMATICS_INVERSE_ONLY\x10\x03\x12\x13\n\x0fKINEMATICS_BOTH\x10\x04*b\n\x15\x45mcTrajectoryModeType\x12\x16\n\x12\x45MC_TRAJ_MODE_FREE\x10\x01\x12\x17\n\x13\x45MC_TRAJ_MODE_COORD\x10\x02\x12\x18\n\x14\x45MC_TRAJ_MODE_TELEOP\x10\x03*Q\n\x11\x45mcCanonUnitsType\x12\x14\n\x10\x43\x41NON_UNITS_INCH\x10\x01\x12\x12\n\x0e\x43\x41NON_UNITS_MM\x10\x02\x12\x12\n\x0e\x43\x41NON_UNITS_CM\x10\x03*U\n\x12\x45mcLinearUnitsType\x12\x15\n\x11LINEAR_UNITS_INCH\x10\x01\x12\x13\n\x0fLINEAR_UNITS_MM\x10\x02\x12\x13\n\x0fLINEAR_UNITS_CM\x10\x03*b\n\x13\x45mcAngularUnitsType\x12\x19\n\x15\x41NGULAR_UNITS_DEGREES\x10\x01\x12\x18\n\x14\x41NGULAR_UNITS_RADIAN\x10\x02\x12\x16\n\x12\x41NGULAR_UNITS_GRAD\x10\x03*@\n\x10\x45mcTimeUnitsType\x12\x15\n\x11TIME_UNITS_MINUTE\x10\x01\x12\x15\n\x11TIME_UNITS_SECOND\x10\x02*Z\n\x0f\x45mcTaskModeType\x12\x18\n\x14\x45MC_TASK_MODE_MANUAL\x10\x01\x12\x16\n\x12\x45MC_TASK_MODE_AUTO\x10\x02\x12\x15\n\x11\x45MC_TASK_MODE_MDI\x10\x03*{\n\x10\x45mcTaskStateType\x12\x18\n\x14\x45MC_TASK_STATE_ESTOP\x10\x01\x12\x1e\n\x1a\x45MC_TASK_STATE_ESTOP_RESET\x10\x02\x12\x16\n\x12\x45MC_TASK_STATE_OFF\x10\x03\x12\x15\n\x11\x45MC_TASK_STATE_ON\x10\x04*8\n\x0b\x45mcAxisType\x12\x13\n\x0f\x45MC_AXIS_LINEAR\x10\x01\x12\x14\n\x10\x45MC_AXIS_ANGULAR\x10\x02*V\n\x15\x45mcPositionOffsetType\x12\x1e\n\x1a\x45MC_CONFIG_RELATIVE_OFFSET\x10\x01\x12\x1d\n\x19\x45MC_CONFIG_MACHINE_OFFSET\x10\x02*\\\n\x17\x45mcPositionFeedbackType\x12\x1e\n\x1a\x45MC_CONFIG_ACTUAL_FEEDBACK\x10\x01\x12!\n\x1d\x45MC_CONFIG_COMMANDED_FEEDBACK\x10\x02')
+  serialized_pb=_b('\n!machinetalk/protobuf/status.proto\x12\x0bmachinetalk\x1a!machinetalk/protobuf/nanopb.proto\x1a machinetalk/protobuf/types.proto\x1a\"machinetalk/protobuf/preview.proto\x1a#machinetalk/protobuf/emcclass.proto\x1a\"machinetalk/protobuf/motcmds.proto\"\xc6\x01\n\x0b\x45mcToolData\x12\r\n\x05index\x18\x01 \x02(\x05\x12\n\n\x02id\x18\x02 \x01(\x05\x12\x10\n\x08\x64iameter\x18\x0c \x01(\x01\x12\x12\n\nfrontangle\x18\r \x01(\x01\x12\x11\n\tbackangle\x18\x0e \x01(\x01\x12\x13\n\x0borientation\x18\x0f \x01(\x05\x12%\n\x06offset\x18\x10 \x01(\x0b\x32\x15.machinetalk.Position\x12\x0f\n\x07\x63omment\x18\x11 \x01(\t\x12\x0e\n\x06pocket\x18\x12 \x01(\x05:\x06\x92?\x03H\xcc\x08\"\xd5\x02\n\x13\x45mcStatusMotionAxis\x12\r\n\x05index\x18\x01 \x02(\x05\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\x12\r\n\x05\x66\x61ult\x18\x03 \x01(\x08\x12\x16\n\x0e\x66\x65rror_current\x18\x04 \x01(\x01\x12\x17\n\x0f\x66\x65rror_highmark\x18\x05 \x01(\x01\x12\r\n\x05homed\x18\x06 \x01(\x08\x12\x0e\n\x06homing\x18\x07 \x01(\x08\x12\r\n\x05inpos\x18\x08 \x01(\x08\x12\r\n\x05input\x18\t \x01(\x01\x12\x16\n\x0emax_hard_limit\x18\n \x01(\x08\x12\x16\n\x0emax_soft_limit\x18\x0b \x01(\x08\x12\x16\n\x0emin_hard_limit\x18\x0c \x01(\x08\x12\x16\n\x0emin_soft_limit\x18\r \x01(\x08\x12\x0e\n\x06output\x18\x0e \x01(\x01\x12\x17\n\x0foverride_limits\x18\x0f \x01(\x08\x12\x10\n\x08velocity\x18\x10 \x01(\x01:\x06\x92?\x03H\xcd\x08\"\xa6\x02\n\x13\x45mcStatusConfigAxis\x12\r\n\x05index\x18\x01 \x02(\x05\x12+\n\taxis_type\x18\x02 \x01(\x0e\x32\x18.machinetalk.EmcAxisType\x12\x10\n\x08\x62\x61\x63klash\x18\x03 \x01(\x01\x12\x12\n\nmax_ferror\x18\x04 \x01(\x01\x12\x1a\n\x12max_position_limit\x18\x05 \x01(\x01\x12\x12\n\nmin_ferror\x18\x06 \x01(\x01\x12\x1a\n\x12min_position_limit\x18\x07 \x01(\x01\x12\x15\n\rhome_sequence\x18\t \x01(\x05\x12\x18\n\x10max_acceleration\x18\n \x01(\x01\x12\x14\n\x0cmax_velocity\x18\x0b \x01(\x01\x12\x12\n\nincrements\x18\x0c \x01(\t:\x06\x92?\x03H\xce\x08\"?\n\x13\x45mcProgramExtension\x12\r\n\x05index\x18\x01 \x02(\x05\x12\x11\n\textension\x18\x02 \x01(\t:\x06\x92?\x03H\xcf\x08\"9\n\x11\x45mcStatusAnalogIO\x12\r\n\x05index\x18\x01 \x02(\x05\x12\r\n\x05value\x18\x02 \x01(\x01:\x06\x92?\x03H\xd0\x08\":\n\x12\x45mcStatusDigitalIO\x12\r\n\x05index\x18\x01 \x02(\x05\x12\r\n\x05value\x18\x02 \x01(\x08:\x06\x92?\x03H\xd1\x08\"6\n\x0e\x45mcStatusLimit\x12\r\n\x05index\x18\x01 \x02(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x06\x92?\x03H\xd2\x08\"6\n\x0e\x45mcStatusGCode\x12\r\n\x05index\x18\x01 \x02(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x06\x92?\x03H\xd3\x08\"6\n\x0e\x45mcStatusMCode\x12\r\n\x05index\x18\x01 \x02(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x06\x92?\x03H\xd4\x08\"8\n\x10\x45mcStatusSetting\x12\r\n\x05index\x18\x01 \x02(\x05\x12\r\n\x05value\x18\x02 \x01(\x01:\x06\x92?\x03H\xd5\x08\"\xba\t\n\x0f\x45mcStatusConfig\x12\x1c\n\x14\x64\x65\x66\x61ult_acceleration\x18\x01 \x01(\x01\x12\x0c\n\x04\x61xes\x18\x03 \x01(\x05\x12.\n\x04\x61xis\x18\x04 \x03(\x0b\x32 .machinetalk.EmcStatusConfigAxis\x12\x11\n\taxis_mask\x18\x05 \x01(\x05\x12\x12\n\ncycle_time\x18\x06 \x01(\x01\x12\r\n\x05\x64\x65\x62ug\x18\x07 \x01(\x05\x12\x37\n\x0fkinematics_type\x18\x08 \x01(\x0e\x32\x1e.machinetalk.EmcKinematicsType\x12\x18\n\x10max_acceleration\x18\n \x01(\x01\x12\x14\n\x0cmax_velocity\x18\x0b \x01(\x01\x12\x35\n\x0clinear_units\x18\x0c \x01(\x0e\x32\x1f.machinetalk.EmcLinearUnitsType\x12\x18\n\x10\x64\x65\x66\x61ult_velocity\x18\r \x01(\x01\x12;\n\x11program_extension\x18\x0e \x03(\x0b\x32 .machinetalk.EmcProgramExtension\x12;\n\x0fposition_offset\x18\x0f \x01(\x0e\x32\".machinetalk.EmcPositionOffsetType\x12?\n\x11position_feedback\x18\x10 \x01(\x0e\x32$.machinetalk.EmcPositionFeedbackType\x12\x19\n\x11max_feed_override\x18\x11 \x01(\x01\x12\x19\n\x11min_feed_override\x18\x12 \x01(\x01\x12\x1c\n\x14max_spindle_override\x18\x13 \x01(\x01\x12\x1c\n\x14min_spindle_override\x18\x14 \x01(\x01\x12\x1d\n\x15\x64\x65\x66\x61ult_spindle_speed\x18\x15 \x01(\x01\x12\x1f\n\x17\x64\x65\x66\x61ult_linear_velocity\x18\x16 \x01(\x01\x12\x14\n\x0cmin_velocity\x18\x17 \x01(\x01\x12\x1b\n\x13max_linear_velocity\x18\x18 \x01(\x01\x12\x1b\n\x13min_linear_velocity\x18\x19 \x01(\x01\x12 \n\x18\x64\x65\x66\x61ult_angular_velocity\x18\x1a \x01(\x01\x12\x1c\n\x14max_angular_velocity\x18\x1b \x01(\x01\x12\x1c\n\x14min_angular_velocity\x18\x1c \x01(\x01\x12\x12\n\nincrements\x18\x1d \x01(\t\x12\r\n\x05grids\x18\x1e \x01(\t\x12\r\n\x05lathe\x18\x1f \x01(\x08\x12\x10\n\x08geometry\x18  \x01(\t\x12\x13\n\x0b\x61rcdivision\x18! \x01(\r\x12\x17\n\x0fno_force_homing\x18\" \x01(\x08\x12\x13\n\x0bremote_path\x18# \x01(\t\x12\x31\n\ntime_units\x18$ \x01(\x0e\x32\x1d.machinetalk.EmcTimeUnitsType\x12\x0c\n\x04name\x18% \x01(\t\x12\x37\n\x0cuser_command\x18& \x03(\x0b\x32!.machinetalk.EmcStatusUserCommand\x12\x37\n\rangular_units\x18\' \x01(\x0e\x32 .machinetalk.EmcAngularUnitsType:\x06\x92?\x03H\xd6\x08\"\xfb\x0b\n\x0f\x45mcStatusMotion\x12\x14\n\x0c\x61\x63tive_queue\x18\x01 \x01(\x05\x12.\n\x0f\x61\x63tual_position\x18\x02 \x01(\x0b\x32\x15.machinetalk.Position\x12\x1d\n\x15\x61\x64\x61ptive_feed_enabled\x18\x03 \x01(\x08\x12+\n\x03\x61in\x18\x04 \x03(\x0b\x32\x1e.machinetalk.EmcStatusAnalogIO\x12,\n\x04\x61out\x18\x05 \x03(\x0b\x32\x1e.machinetalk.EmcStatusAnalogIO\x12.\n\x04\x61xis\x18\x06 \x03(\x0b\x32 .machinetalk.EmcStatusMotionAxis\x12\x14\n\x0c\x62lock_delete\x18\x07 \x01(\x08\x12\x14\n\x0c\x63urrent_line\x18\x08 \x01(\x05\x12\x13\n\x0b\x63urrent_vel\x18\t \x01(\x01\x12\x12\n\ndelay_left\x18\n \x01(\x01\x12,\n\x03\x64in\x18\x0b \x03(\x0b\x32\x1f.machinetalk.EmcStatusDigitalIO\x12\x16\n\x0e\x64istance_to_go\x18\x0c \x01(\x01\x12-\n\x04\x64out\x18\r \x03(\x0b\x32\x1f.machinetalk.EmcStatusDigitalIO\x12\"\n\x03\x64tg\x18\x0e \x01(\x0b\x32\x15.machinetalk.Position\x12\x0f\n\x07\x65nabled\x18\x0f \x01(\x08\x12\x19\n\x11\x66\x65\x65\x64_hold_enabled\x18\x10 \x01(\x08\x12\x1d\n\x15\x66\x65\x65\x64_override_enabled\x18\x11 \x01(\x08\x12\x10\n\x08\x66\x65\x65\x64rate\x18\x12 \x01(\x01\x12+\n\tg5x_index\x18\x13 \x01(\x0e\x32\x18.machinetalk.OriginIndex\x12)\n\ng5x_offset\x18\x14 \x01(\x0b\x32\x15.machinetalk.Position\x12)\n\ng92_offset\x18\x15 \x01(\x0b\x32\x15.machinetalk.Position\x12\n\n\x02id\x18\x17 \x01(\x05\x12\r\n\x05inpos\x18\x18 \x01(\x08\x12\x34\n\x15joint_actual_position\x18\x19 \x01(\x0b\x32\x15.machinetalk.Position\x12-\n\x0ejoint_position\x18\x1a \x01(\x0b\x32\x15.machinetalk.Position\x12*\n\x05limit\x18\x1b \x03(\x0b\x32\x1b.machinetalk.EmcStatusLimit\x12\x13\n\x0bmotion_line\x18\x1c \x01(\x05\x12,\n\x0bmotion_type\x18\x1d \x01(\x0e\x32\x17.machinetalk.MotionType\x12\x37\n\x0bmotion_mode\x18\x1e \x01(\x0e\x32\".machinetalk.EmcTrajectoryModeType\x12\x0e\n\x06paused\x18\x1f \x01(\x08\x12\'\n\x08position\x18  \x01(\x0b\x32\x15.machinetalk.Position\x12\x15\n\rprobe_tripped\x18! \x01(\x08\x12\x11\n\tprobe_val\x18\" \x01(\x05\x12.\n\x0fprobed_position\x18# \x01(\x0b\x32\x15.machinetalk.Position\x12\x0f\n\x07probing\x18$ \x01(\x08\x12\r\n\x05queue\x18% \x01(\x05\x12\x12\n\nqueue_full\x18& \x01(\x08\x12\x13\n\x0brotation_xy\x18\' \x01(\x01\x12\x15\n\rspindle_brake\x18( \x01(\x08\x12\x19\n\x11spindle_direction\x18) \x01(\x05\x12\x17\n\x0fspindle_enabled\x18* \x01(\x08\x12\x1a\n\x12spindle_increasing\x18+ \x01(\x05\x12 \n\x18spindle_override_enabled\x18, \x01(\x08\x12\x15\n\rspindle_speed\x18- \x01(\x01\x12\x13\n\x0bspindlerate\x18. \x01(\x01\x12&\n\x05state\x18/ \x01(\x0e\x32\x17.machinetalk.RCS_STATUS\x12\x14\n\x0cmax_velocity\x18\x30 \x01(\x01\x12\x18\n\x10max_acceleration\x18\x31 \x01(\x01\x12\x11\n\trapidrate\x18\x32 \x01(\x01:\x06\x92?\x03H\xd7\x08\"\xee\x01\n\x0b\x45mcStatusIo\x12\r\n\x05\x65stop\x18\x01 \x01(\x08\x12\r\n\x05\x66lood\x18\x02 \x01(\x08\x12\x0c\n\x04lube\x18\x03 \x01(\x08\x12\x12\n\nlube_level\x18\x04 \x01(\x08\x12\x0c\n\x04mist\x18\x05 \x01(\x08\x12*\n\x0btool_offset\x18\x08 \x01(\x0b\x32\x15.machinetalk.Position\x12,\n\ntool_table\x18\t \x03(\x0b\x32\x18.machinetalk.EmcToolData\x12\x16\n\x0epocket_prepped\x18\n \x01(\x05\x12\x17\n\x0ftool_in_spindle\x18\x0b \x01(\x05:\x06\x92?\x03H\xd8\x08\"\xc7\x02\n\rEmcStatusTask\x12\x1a\n\x12\x65\x63ho_serial_number\x18\x01 \x01(\x05\x12\x35\n\nexec_state\x18\x02 \x01(\x0e\x32!.machinetalk.EmcTaskExecStateType\x12\x0c\n\x04\x66ile\x18\x03 \x01(\t\x12\x15\n\rinput_timeout\x18\x04 \x01(\x08\x12\x15\n\roptional_stop\x18\x05 \x01(\x08\x12\x11\n\tread_line\x18\x06 \x01(\x05\x12/\n\ttask_mode\x18\x07 \x01(\x0e\x32\x1c.machinetalk.EmcTaskModeType\x12\x13\n\x0btask_paused\x18\x08 \x01(\x05\x12\x31\n\ntask_state\x18\t \x01(\x0e\x32\x1d.machinetalk.EmcTaskStateType\x12\x13\n\x0btotal_lines\x18\n \x01(\x05:\x06\x92?\x03H\xd9\x08\"\xe4\x02\n\x0f\x45mcStatusInterp\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t\x12+\n\x06gcodes\x18\x02 \x03(\x0b\x32\x1b.machinetalk.EmcStatusGCode\x12\x35\n\x0cinterp_state\x18\x03 \x01(\x0e\x32\x1f.machinetalk.EmcInterpStateType\x12?\n\x13interpreter_errcode\x18\x04 \x01(\x0e\x32\".machinetalk.EmcInterpExitCodeType\x12+\n\x06mcodes\x18\x05 \x03(\x0b\x32\x1b.machinetalk.EmcStatusMCode\x12/\n\x08settings\x18\x06 \x03(\x0b\x32\x1d.machinetalk.EmcStatusSetting\x12\x35\n\rprogram_units\x18\x07 \x01(\x0e\x32\x1e.machinetalk.EmcCanonUnitsType:\x06\x92?\x03H\xda\x08\"\xe2\x03\n\x14\x45mcCommandParameters\x12\r\n\x05index\x18\x01 \x01(\r\x12\x13\n\x0b\x64\x65\x62ug_level\x18\x02 \x01(\r\x12\x13\n\x0bline_number\x18\x03 \x01(\x05\x12\r\n\x05scale\x18\x04 \x01(\x01\x12\x10\n\x08velocity\x18\x05 \x01(\x01\x12\x10\n\x08\x64istance\x18\x06 \x01(\x01\x12\r\n\x05value\x18\x07 \x01(\x01\x12\x0e\n\x06\x65nable\x18\x08 \x01(\x08\x12\x0f\n\x07\x63ommand\x18\t \x01(\t\x12\x0c\n\x04path\x18\n \x01(\t\x12/\n\ttask_mode\x18\x64 \x01(\x0e\x32\x1c.machinetalk.EmcTaskModeType\x12\x31\n\ntask_state\x18\x65 \x01(\x0e\x32\x1d.machinetalk.EmcTaskStateType\x12\x35\n\ttraj_mode\x18\x66 \x01(\x0e\x32\".machinetalk.EmcTrajectoryModeType\x12\"\n\x04pose\x18g \x01(\x0b\x32\x14.machinetalk.EmcPose\x12+\n\ttool_data\x18h \x01(\x0b\x32\x18.machinetalk.EmcToolData\x12,\n\ntool_table\x18i \x03(\x0b\x32\x18.machinetalk.EmcToolData:\x06\x92?\x03H\xdb\x08\">\n\x14\x45mcStatusUserCommand\x12\r\n\x05index\x18\x01 \x02(\x05\x12\x0f\n\x07\x63ommand\x18\x02 \x01(\t:\x06\x92?\x03H\xdc\x08\"\xa7\x02\n\x0b\x45mcStatusUI\x12\x1d\n\x15spindle_brake_visible\x18\x01 \x01(\x08\x12\x1a\n\x12spindle_cw_visible\x18\x02 \x01(\x08\x12\x1b\n\x13spindle_ccw_visible\x18\x03 \x01(\x08\x12\x1c\n\x14spindle_stop_visible\x18\x04 \x01(\x08\x12\x1c\n\x14spindle_plus_visible\x18\x05 \x01(\x08\x12\x1d\n\x15spindle_minus_visible\x18\x06 \x01(\x08\x12 \n\x18spindle_override_visible\x18\x07 \x01(\x08\x12\x1d\n\x15\x63oolant_flood_visible\x18\x08 \x01(\x08\x12\x1c\n\x14\x63oolant_mist_visible\x18\t \x01(\x08:\x06\x92?\x03H\xdd\x08*\xe7\x02\n\x14\x45mcTaskExecStateType\x12\x17\n\x13\x45MC_TASK_EXEC_ERROR\x10\x01\x12\x16\n\x12\x45MC_TASK_EXEC_DONE\x10\x02\x12$\n EMC_TASK_EXEC_WAITING_FOR_MOTION\x10\x03\x12*\n&EMC_TASK_EXEC_WAITING_FOR_MOTION_QUEUE\x10\x04\x12 \n\x1c\x45MC_TASK_EXEC_WAITING_FOR_IO\x10\x05\x12+\n\'EMC_TASK_EXEC_WAITING_FOR_MOTION_AND_IO\x10\x07\x12#\n\x1f\x45MC_TASK_EXEC_WAITING_FOR_DELAY\x10\x08\x12(\n$EMC_TASK_EXEC_WAITING_FOR_SYSTEM_CMD\x10\t\x12.\n*EMC_TASK_EXEC_WAITING_FOR_SPINDLE_ORIENTED\x10\n*\x84\x01\n\x12\x45mcInterpStateType\x12\x18\n\x14\x45MC_TASK_INTERP_IDLE\x10\x01\x12\x1b\n\x17\x45MC_TASK_INTERP_READING\x10\x02\x12\x1a\n\x16\x45MC_TASK_INTERP_PAUSED\x10\x03\x12\x1b\n\x17\x45MC_TASK_INTERP_WAITING\x10\x04*\xc8\x01\n\x15\x45mcInterpExitCodeType\x12\x16\n\x12\x45MC_INTERP_EXIT_OK\x10\x00\x12\x18\n\x14\x45MC_INTERP_EXIT_EXIT\x10\x01\x12\"\n\x1e\x45MC_INTERP_EXIT_EXECUTE_FINISH\x10\x02\x12\x1b\n\x17\x45MC_INTERP_EXIT_ENDFILE\x10\x03\x12!\n\x1d\x45MC_INTERP_EXIT_FILE_NOT_OPEN\x10\x04\x12\x19\n\x15\x45MC_INTERP_EXIT_ERROR\x10\x05*{\n\x11\x45mcKinematicsType\x12\x17\n\x13KINEMATICS_IDENTITY\x10\x01\x12\x1b\n\x17KINEMATICS_FORWARD_ONLY\x10\x02\x12\x1b\n\x17KINEMATICS_INVERSE_ONLY\x10\x03\x12\x13\n\x0fKINEMATICS_BOTH\x10\x04*b\n\x15\x45mcTrajectoryModeType\x12\x16\n\x12\x45MC_TRAJ_MODE_FREE\x10\x01\x12\x17\n\x13\x45MC_TRAJ_MODE_COORD\x10\x02\x12\x18\n\x14\x45MC_TRAJ_MODE_TELEOP\x10\x03*Q\n\x11\x45mcCanonUnitsType\x12\x14\n\x10\x43\x41NON_UNITS_INCH\x10\x01\x12\x12\n\x0e\x43\x41NON_UNITS_MM\x10\x02\x12\x12\n\x0e\x43\x41NON_UNITS_CM\x10\x03*U\n\x12\x45mcLinearUnitsType\x12\x15\n\x11LINEAR_UNITS_INCH\x10\x01\x12\x13\n\x0fLINEAR_UNITS_MM\x10\x02\x12\x13\n\x0fLINEAR_UNITS_CM\x10\x03*b\n\x13\x45mcAngularUnitsType\x12\x19\n\x15\x41NGULAR_UNITS_DEGREES\x10\x01\x12\x18\n\x14\x41NGULAR_UNITS_RADIAN\x10\x02\x12\x16\n\x12\x41NGULAR_UNITS_GRAD\x10\x03*@\n\x10\x45mcTimeUnitsType\x12\x15\n\x11TIME_UNITS_MINUTE\x10\x01\x12\x15\n\x11TIME_UNITS_SECOND\x10\x02*Z\n\x0f\x45mcTaskModeType\x12\x18\n\x14\x45MC_TASK_MODE_MANUAL\x10\x01\x12\x16\n\x12\x45MC_TASK_MODE_AUTO\x10\x02\x12\x15\n\x11\x45MC_TASK_MODE_MDI\x10\x03*{\n\x10\x45mcTaskStateType\x12\x18\n\x14\x45MC_TASK_STATE_ESTOP\x10\x01\x12\x1e\n\x1a\x45MC_TASK_STATE_ESTOP_RESET\x10\x02\x12\x16\n\x12\x45MC_TASK_STATE_OFF\x10\x03\x12\x15\n\x11\x45MC_TASK_STATE_ON\x10\x04*8\n\x0b\x45mcAxisType\x12\x13\n\x0f\x45MC_AXIS_LINEAR\x10\x01\x12\x14\n\x10\x45MC_AXIS_ANGULAR\x10\x02*V\n\x15\x45mcPositionOffsetType\x12\x1e\n\x1a\x45MC_CONFIG_RELATIVE_OFFSET\x10\x01\x12\x1d\n\x19\x45MC_CONFIG_MACHINE_OFFSET\x10\x02*\\\n\x17\x45mcPositionFeedbackType\x12\x1e\n\x1a\x45MC_CONFIG_ACTUAL_FEEDBACK\x10\x01\x12!\n\x1d\x45MC_CONFIG_COMMANDED_FEEDBACK\x10\x02')
   ,
   dependencies=[machinetalk_dot_protobuf_dot_nanopb__pb2.DESCRIPTOR,machinetalk_dot_protobuf_dot_types__pb2.DESCRIPTOR,machinetalk_dot_protobuf_dot_preview__pb2.DESCRIPTOR,machinetalk_dot_protobuf_dot_emcclass__pb2.DESCRIPTOR,machinetalk_dot_protobuf_dot_motcmds__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -75,8 +75,8 @@ _EMCTASKEXECSTATETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=5707,
-  serialized_end=6066,
+  serialized_start=6005,
+  serialized_end=6364,
 )
 _sym_db.RegisterEnumDescriptor(_EMCTASKEXECSTATETYPE)
 
@@ -106,8 +106,8 @@ _EMCINTERPSTATETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6069,
-  serialized_end=6201,
+  serialized_start=6367,
+  serialized_end=6499,
 )
 _sym_db.RegisterEnumDescriptor(_EMCINTERPSTATETYPE)
 
@@ -145,8 +145,8 @@ _EMCINTERPEXITCODETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6204,
-  serialized_end=6404,
+  serialized_start=6502,
+  serialized_end=6702,
 )
 _sym_db.RegisterEnumDescriptor(_EMCINTERPEXITCODETYPE)
 
@@ -176,8 +176,8 @@ _EMCKINEMATICSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6406,
-  serialized_end=6529,
+  serialized_start=6704,
+  serialized_end=6827,
 )
 _sym_db.RegisterEnumDescriptor(_EMCKINEMATICSTYPE)
 
@@ -203,8 +203,8 @@ _EMCTRAJECTORYMODETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6531,
-  serialized_end=6629,
+  serialized_start=6829,
+  serialized_end=6927,
 )
 _sym_db.RegisterEnumDescriptor(_EMCTRAJECTORYMODETYPE)
 
@@ -230,8 +230,8 @@ _EMCCANONUNITSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6631,
-  serialized_end=6712,
+  serialized_start=6929,
+  serialized_end=7010,
 )
 _sym_db.RegisterEnumDescriptor(_EMCCANONUNITSTYPE)
 
@@ -257,8 +257,8 @@ _EMCLINEARUNITSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6714,
-  serialized_end=6799,
+  serialized_start=7012,
+  serialized_end=7097,
 )
 _sym_db.RegisterEnumDescriptor(_EMCLINEARUNITSTYPE)
 
@@ -284,8 +284,8 @@ _EMCANGULARUNITSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6801,
-  serialized_end=6899,
+  serialized_start=7099,
+  serialized_end=7197,
 )
 _sym_db.RegisterEnumDescriptor(_EMCANGULARUNITSTYPE)
 
@@ -307,8 +307,8 @@ _EMCTIMEUNITSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6901,
-  serialized_end=6965,
+  serialized_start=7199,
+  serialized_end=7263,
 )
 _sym_db.RegisterEnumDescriptor(_EMCTIMEUNITSTYPE)
 
@@ -334,8 +334,8 @@ _EMCTASKMODETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6967,
-  serialized_end=7057,
+  serialized_start=7265,
+  serialized_end=7355,
 )
 _sym_db.RegisterEnumDescriptor(_EMCTASKMODETYPE)
 
@@ -365,8 +365,8 @@ _EMCTASKSTATETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=7059,
-  serialized_end=7182,
+  serialized_start=7357,
+  serialized_end=7480,
 )
 _sym_db.RegisterEnumDescriptor(_EMCTASKSTATETYPE)
 
@@ -388,8 +388,8 @@ _EMCAXISTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=7184,
-  serialized_end=7240,
+  serialized_start=7482,
+  serialized_end=7538,
 )
 _sym_db.RegisterEnumDescriptor(_EMCAXISTYPE)
 
@@ -411,8 +411,8 @@ _EMCPOSITIONOFFSETTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=7242,
-  serialized_end=7328,
+  serialized_start=7540,
+  serialized_end=7626,
 )
 _sym_db.RegisterEnumDescriptor(_EMCPOSITIONOFFSETTYPE)
 
@@ -434,8 +434,8 @@ _EMCPOSITIONFEEDBACKTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=7330,
-  serialized_end=7422,
+  serialized_start=7628,
+  serialized_end=7720,
 )
 _sym_db.RegisterEnumDescriptor(_EMCPOSITIONFEEDBACKTYPE)
 
@@ -2160,6 +2160,93 @@ _EMCSTATUSUSERCOMMAND = _descriptor.Descriptor(
   serialized_end=5704,
 )
 
+
+_EMCSTATUSUI = _descriptor.Descriptor(
+  name='EmcStatusUI',
+  full_name='machinetalk.EmcStatusUI',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='spindle_brake_visible', full_name='machinetalk.EmcStatusUI.spindle_brake_visible', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='spindle_cw_visible', full_name='machinetalk.EmcStatusUI.spindle_cw_visible', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='spindle_ccw_visible', full_name='machinetalk.EmcStatusUI.spindle_ccw_visible', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='spindle_stop_visible', full_name='machinetalk.EmcStatusUI.spindle_stop_visible', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='spindle_plus_visible', full_name='machinetalk.EmcStatusUI.spindle_plus_visible', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='spindle_minus_visible', full_name='machinetalk.EmcStatusUI.spindle_minus_visible', index=5,
+      number=6, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='spindle_override_visible', full_name='machinetalk.EmcStatusUI.spindle_override_visible', index=6,
+      number=7, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='coolant_flood_visible', full_name='machinetalk.EmcStatusUI.coolant_flood_visible', index=7,
+      number=8, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='coolant_mist_visible', full_name='machinetalk.EmcStatusUI.coolant_mist_visible', index=8,
+      number=9, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\222?\003H\335\010')),
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5707,
+  serialized_end=6002,
+)
+
 _EMCTOOLDATA.fields_by_name['offset'].message_type = machinetalk_dot_protobuf_dot_preview__pb2._POSITION
 _EMCSTATUSCONFIGAXIS.fields_by_name['axis_type'].enum_type = _EMCAXISTYPE
 _EMCSTATUSCONFIG.fields_by_name['axis'].message_type = _EMCSTATUSCONFIGAXIS
@@ -2223,6 +2310,7 @@ DESCRIPTOR.message_types_by_name['EmcStatusTask'] = _EMCSTATUSTASK
 DESCRIPTOR.message_types_by_name['EmcStatusInterp'] = _EMCSTATUSINTERP
 DESCRIPTOR.message_types_by_name['EmcCommandParameters'] = _EMCCOMMANDPARAMETERS
 DESCRIPTOR.message_types_by_name['EmcStatusUserCommand'] = _EMCSTATUSUSERCOMMAND
+DESCRIPTOR.message_types_by_name['EmcStatusUI'] = _EMCSTATUSUI
 DESCRIPTOR.enum_types_by_name['EmcTaskExecStateType'] = _EMCTASKEXECSTATETYPE
 DESCRIPTOR.enum_types_by_name['EmcInterpStateType'] = _EMCINTERPSTATETYPE
 DESCRIPTOR.enum_types_by_name['EmcInterpExitCodeType'] = _EMCINTERPEXITCODETYPE
@@ -2357,6 +2445,13 @@ EmcStatusUserCommand = _reflection.GeneratedProtocolMessageType('EmcStatusUserCo
   ))
 _sym_db.RegisterMessage(EmcStatusUserCommand)
 
+EmcStatusUI = _reflection.GeneratedProtocolMessageType('EmcStatusUI', (_message.Message,), dict(
+  DESCRIPTOR = _EMCSTATUSUI,
+  __module__ = 'machinetalk.protobuf.status_pb2'
+  # @@protoc_insertion_point(class_scope:machinetalk.EmcStatusUI)
+  ))
+_sym_db.RegisterMessage(EmcStatusUI)
+
 
 _EMCTOOLDATA.has_options = True
 _EMCTOOLDATA._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\222?\003H\314\010'))
@@ -2392,4 +2487,6 @@ _EMCCOMMANDPARAMETERS.has_options = True
 _EMCCOMMANDPARAMETERS._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\222?\003H\333\010'))
 _EMCSTATUSUSERCOMMAND.has_options = True
 _EMCSTATUSUSERCOMMAND._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\222?\003H\334\010'))
+_EMCSTATUSUI.has_options = True
+_EMCSTATUSUI._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('\222?\003H\335\010'))
 # @@protoc_insertion_point(module_scope)
