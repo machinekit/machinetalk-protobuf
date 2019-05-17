@@ -13,11 +13,12 @@ from codecs import open
 PROJECT = 'machinetalk'
 PROJECT_NAME = '%s-protobuf' % PROJECT
 DESCRIPTION = "Protobuf Python modules for %s" % PROJECT
-VERSION = "1.1.0"
+VERSION = "1.1.1"
 AUTHOR = "Alexander Roessler"
 AUTHOR_EMAIL = "alex@machinekoder.com"
 PROJECT_URL = 'https://github.com/machinekit/%s' % PROJECT_NAME
-DOWNLOAD_URL = 'https://github.com/machinekit/%s/archive/%s.tar.gz' % (PROJECT_NAME, VERSION)
+DOWNLOAD_URL = 'https://github.com/machinekit/%s/archive/%s.tar.gz' % (
+    PROJECT_NAME, VERSION)
 KEYWORDS = 'protobuf machinekit motion-control hal'
 
 here = path.abspath(path.dirname(__file__))
@@ -36,6 +37,7 @@ setup(
 
     description=DESCRIPTION,
     long_description=long_description,
+    long_description_content_type="text/markdown",
 
     # The project's main homepage.
     url=PROJECT_URL,
@@ -80,12 +82,14 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages=find_packages(where='python', exclude=['contrib', 'docs', 'tests']),
-    package_dir={'': 'python'},  # Our packages live under src but src is not a package itself
+    packages=find_packages(where='python', exclude=[
+                           'contrib', 'docs', 'tests']),
+    # Our packages live under src but src is not a package itself
+    package_dir={'': 'python'},
 
     # Alternatively, if you want to distribute just a my_module.py, uncomment
     # this:
-    #py_modules=["corenlp_protobuf"],
+    # py_modules=["corenlp_protobuf"],
 
     # List run-time dependencies here.  These will be installed by pip when
     # your project is installed. For an analysis of "install_requires" vs pip's
