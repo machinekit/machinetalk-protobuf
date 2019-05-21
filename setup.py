@@ -13,7 +13,7 @@ from codecs import open
 PROJECT = 'machinetalk'
 PROJECT_NAME = '%s-protobuf' % PROJECT
 DESCRIPTION = "Protobuf Python modules for %s" % PROJECT
-VERSION = "1.1.1"
+VERSION = "1.1.3"
 AUTHOR = "Alexander Roessler"
 AUTHOR_EMAIL = "alex@machinekoder.com"
 PROJECT_URL = 'https://github.com/machinekit/%s' % PROJECT_NAME
@@ -82,10 +82,10 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages=find_packages(where='python', exclude=[
+    packages=find_packages(where='build/python', exclude=[
                            'contrib', 'docs', 'tests']),
     # Our packages live under src but src is not a package itself
-    package_dir={'': 'python'},
+    package_dir={'': 'build/python'},
 
     # Alternatively, if you want to distribute just a my_module.py, uncomment
     # this:
