@@ -33,6 +33,7 @@ enum EmcInterpStateType {
     EMC_TASK_INTERP_READING = 2;  /// Task interpreter is reading.
     EMC_TASK_INTERP_PAUSED  = 3;  /// Task interpreter is paused.
     EMC_TASK_INTERP_WAITING = 4;  /// Task interpreter is waiting.
+    EMC_TASK_INTERP_SEEKING = 5;  /// Task interpreter is seeking.
 }
 
 /**
