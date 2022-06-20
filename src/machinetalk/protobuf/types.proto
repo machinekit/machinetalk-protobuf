@@ -722,6 +722,7 @@ enum OriginIndex {
     ORIGIN_G59_1 = 7;
     ORIGIN_G59_2 = 8;
     ORIGIN_G59_3 = 9;
+    ORIGIN_G54_1 = 10; /// extended origin
 }
 
 
