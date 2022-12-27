@@ -477,6 +477,7 @@ message EmcStatusMotion {
     optional double                 rapidrate               = 50; /// Current rapid override.
     repeated EmcStatusMotionJoint   joint                   = 51; /// Per joint motion values.
     repeated EmcStatusMotionSpindle spindle                 = 52; /// Per spindle motion values.
+    optional int32                  g5x_index_extended      = 53; /// Currently active coordinate system, extended index.
 }
 
 /**
